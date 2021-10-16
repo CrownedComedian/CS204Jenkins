@@ -16,6 +16,9 @@ public class Main {
             case "divide":
                 System.out.println(c.divide(Integer.parseInt(args[1]), Integer.parseInt(args[2])));
                 break;
+            case "fibonacci":
+                System.out.println(c.fibonacciNumberFinder(Integer.parseInt(args[1])));
+                break;
             case "binary":
                 System.out.println(c.intToBinaryNumber(Integer.parseInt(args[1])));
                 break;
