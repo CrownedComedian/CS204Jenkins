@@ -1,6 +1,20 @@
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String args[]) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Welcome to the calculator");
+        System.out.println("Enter a command:");
+        String raw;
+
+        do {
+            raw = input.nextLine();
+            handleInput(raw.split(" "));
+        } while(!(raw.equals("quit") || raw.equals("exit") || raw.equals("q")));
+    }
+
+    private static void handleInput(String... args) {
         Calculator c = new Calculator();
 
         switch (args[0]) {
@@ -22,8 +36,6 @@ public class Main {
             case "binary":
                 System.out.println(c.intToBinaryNumber(Integer.parseInt(args[1])));
                 break;
-            default:
-                System.out.println("command not recognized");
         }
     }
 }
